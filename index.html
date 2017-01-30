@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<title> Austin Arnold Resume </title>
+<!-- Styles -->
+<style>
+  /* A CSS comment */
+button.accordion {
+    background-color: #863be7;
+    color: #f9f9f9;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: 5px ;
+    border-style: outset;
+    outline: none;
+    font-style: bold;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.header {
+  text-align: center;
+  width: auto;
+  background-color: rgba(57, 55, 77, 0.59);
+  border: 3px solid black;
+  border-style: outset;
+}
+
+.title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active {
+    background-color: #1d0a9e;
+    width: 100%
+    transition: 0.2s;
+}
+
+button.accordion:hover {
+  background-color: #372a81;
+  width: 100%
+  transition: 0.1s;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <h1 class="title"> Austin S. Arnold </h1>
+  <h3 class="header"> 1666 E Bishop Dr, Tempe, AZ 85282 </h3>
+  <h3 class="header"> asarnold@asu.edu | (248)-895-7436 </h3>
+
+  <fieldset>
+  	<legend>Contents</legend>
+        <button class="accordion">My Objective</button>
+        <div class='panel'>
+          <p>
+            Free lance front-end development on mobile and web applications.
+            Practice and utilize back-end development. Add creative content to work.
+          </p>
+        </div>
+
+        <button class="accordion">Education</button>
+        <div class='panel'>
+          <p>
+            Arizona State University | 2014-2018 <br />
+             - BA in Digital Culture
+          </p>
+        </div>
+
+        <button class="accordion">Skills</button>
+        <div class='panel'>
+          <p>
+             - Specialize in back-end developing <br />
+             - efficient in front-end developing <br/>
+             - Network administration <br />
+             - data analysis (IBM BIgdata Analytics) <br />
+             - mobile dev (java and swift) <br />
+             - database management <br />
+          </p>
+        </div>
+
+        <button class="accordion">Awards</button>
+        <div class='panel'>
+          <p>
+            Arizona State Dean’s List <br />
+            National Honor Society Member <br />
+            Member of Arizona State University Software Development Club (SODA) <br />
+          </p>
+        </div>
+
+        <button class="accordion">References</button>
+        <div class='panel'>
+          <p>
+              REFERENCE #1 <br />
+              First Last    <br />
+              Relation: former boss   <br />
+              Contact: ###-####-####   <br />
+      <br /> <br />
+              REFERENCE #2 <br />
+              First Last    <br />
+              Relation: current boss   <br />
+              Contact: ###-####-####   <br />
+          </p>
+        </div>
+ </fieldset>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+  	       panel.style.maxHeight = null;
+        }
+        else {
+  	       panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+    }
+}
+</script>
+</body>
+</html>
